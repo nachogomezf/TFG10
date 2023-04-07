@@ -1,0 +1,22 @@
+
+
+{
+  "tokens": [
+    {
+        "id": 0,
+        "description": "07/04",
+        "animation_url": "https://gateway.pinata.cloud/ipfs/QmXXPrH23JjFUXa6YWXdvneauSrFjS3wZou8o23sTmUD3c?_gl=1*1oh78rn*rs_ga*YmY5YmFjOWEtZTkxYy00YjM3LWFlNDQtYTA4NzMwMDc4MTdk*rs_ga_5RMPXG14TE*MTY4MDg4NDYwMC4xLjEuMTY4MDg4NDkyMy4yOC4wLjA.",
+        "external_url": "https://www.github.com/nachogomezf",
+        "image": "ipfs://QmasCipcGSesjMgsVYfoTcUidJxqqwsXu4h8j967QymazW",
+        "name": "Prueba websockets"
+    },
+    {
+        "id": 1,
+        "description": "07/04",
+        "animation_url": "https://gateway.pinata.cloud/ipfs/QmXXPrH23JjFUXa6YWXdvneauSrFjS3wZou8o23sTmUD3c?_gl=1*1oh78rn*rs_ga*YmY5YmFjOWEtZTkxYy00YjM3LWFlNDQtYTA4NzMwMDc4MTdk*rs_ga_5RMPXG14TE*MTY4MDg4NDYwMC4xLjEuMTY4MDg4NDkyMy4yOC4wLjA.",
+        "external_url": "https://www.github.com/nachogomezf",
+        "image": "ipfs://QmasCipcGSesjMgsVYfoTcUidJxqqwsXu4h8j967QymazW",
+        "name": "Prueba websockets"
+    }
+        ]
+}
