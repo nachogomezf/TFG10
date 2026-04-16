@@ -1,0 +1,80 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">C</div>
+      <div class="title-block">
+        <h1>Carma Chatbot</h1>
+        <p>Ask anything. Answers are grounded in your knowledge base.</p>
+      </div>
+    </div>
+    <button class="ghost-btn" type="button" (click)="clear()" [disabled]="messages().length === 0">
+      Clear
+    </button>
+  </header>
+
+  <main #messagesContainer class="messages">
+    @if (messages().length === 0) {
+      <div class="empty-state">
+        <div class="empty-icon">?</div>
+        <h2>Start a conversation</h2>
+        <p>Type a question below and Carma will reply with the answer and the sources it used.</p>
+      </div>
+    }
+
+    @for (msg of messages(); track trackMessage($index)) {
+      <div class="message" [class.user]="msg.role === 'user'" [class.bot]="msg.role === 'bot'">
+        <div class="avatar">{{ msg.role === 'user' ? 'You' : 'C' }}</div>
+        <div class="bubble-wrap">
+          <div class="bubble" [class.error]="msg.error">
+            @if (msg.loading) {
+              <div class="typing">
+                <span></span><span></span><span></span>
+              </div>
+            } @else {
+              <div class="text">{{ msg.text }}</div>
+            }
+          </div>
+
+          @if (msg.role === 'bot' && !msg.loading && msg.documents && msg.documents.length > 0) {
+            <details class="sources">
+              <summary>
+                <span class="sources-title">Sources</span>
+                <span class="sources-count">{{ msg.documents.length }}</span>
+              </summary>
+              <ul>
+                @for (doc of msg.documents; track $index) {
+                  <li class="source-item">
+                    <div class="source-label">{{ getSourceLabel(doc, $index) }}</div>
+                    @if (getSourceContent(doc)) {
+                      <div class="source-content">{{ getSourceContent(doc) }}</div>
+                    }
+                  </li>
+                }
+              </ul>
+            </details>
+          }
+        </div>
+      </div>
+    }
+  </main>
+
+  <footer class="composer">
+    <textarea
+      class="composer-input"
+      rows="1"
+      placeholder="Ask Carma a question..."
+      [ngModel]="input()"
+      (ngModelChange)="input.set($event)"
+      (keydown.enter)="onEnter($event)"
+      [disabled]="sending()"
+    ></textarea>
+    <button
+      class="send-btn"
+      type="button"
+      (click)="send()"
+      [disabled]="sending() || input().trim().length === 0"
+    >
+      {{ sending() ? 'Sending...' : 'Send' }}
+    </button>
+  </footer>
+</div>
