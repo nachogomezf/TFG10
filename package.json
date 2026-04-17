@@ -1,23 +1,12 @@
 {
   "name": "carma-chatbot",
-  "version": "1.0.0",
-  "description": "Carma Chatbot - Angular frontend for a RAG-powered chatbot",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development"
-  },
-  "private": true,
+  "scripts": { "start": "ng serve", "build": "ng build" },
   "dependencies": {
-    "@angular/animations": "^17.3.0",
     "@angular/common": "^17.3.0",
     "@angular/compiler": "^17.3.0",
     "@angular/core": "^17.3.0",
     "@angular/forms": "^17.3.0",
     "@angular/platform-browser": "^17.3.0",
-    "@angular/platform-browser-dynamic": "^17.3.0",
-    "@angular/router": "^17.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
