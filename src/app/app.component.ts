@@ -20,6 +20,17 @@ export class AppComponent {
   readonly input = signal('');
   readonly sending = signal(false);
 
+  readonly suggestions = [
+    'What is CARMA?',
+    'How does it work?',
+    'What data sources are supported?',
+  ];
+
+  useSuggestion(text: string): void {
+    this.input.set(text);
+    this.send();
+  }
+
   send(): void {
     const question = this.input().trim();
     if (!question || this.sending()) {

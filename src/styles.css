@@ -1,15 +1,29 @@
 :root {
-  --bg: #0f172a;
-  --surface: #1e293b;
-  --surface-2: #334155;
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --user-bubble: #6366f1;
-  --bot-bubble: #1e293b;
-  --text: #f1f5f9;
-  --muted: #94a3b8;
-  --border: #334155;
-  --danger: #ef4444;
+  --bg: #0a0a12;
+  --bg-gradient: linear-gradient(145deg, #0a0a12 0%, #0f1028 50%, #0a0a12 100%);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.07);
+  --surface-solid: #14142a;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --primary: #7c6aef;
+  --primary-glow: rgba(124, 106, 239, 0.25);
+  --primary-hover: #6b59de;
+  --accent: #a78bfa;
+  --user-bubble: linear-gradient(135deg, #6b59de, #7c6aef);
+  --bot-bubble: rgba(255, 255, 255, 0.04);
+  --text: #eeeef5;
+  --text-secondary: #b0b0c8;
+  --muted: #6b6b8a;
+  --border: rgba(255, 255, 255, 0.06);
+  --danger: #f87171;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px var(--primary-glow);
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
 }
 
 * {
@@ -25,4 +39,27 @@ body {
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+::selection {
+  background: var(--primary-glow);
+  color: white;
 }
